@@ -1,0 +1,6 @@
+hasRecommendationSystem==true
+hasAgeLimit==true
+hasRateDirector==true
+hasRateActor==true
+reviewSystemType==movie
+hasUploadImgFeature==true

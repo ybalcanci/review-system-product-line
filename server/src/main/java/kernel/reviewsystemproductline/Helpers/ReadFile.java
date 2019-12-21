@@ -5,8 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class ReadFile {
-    public static String readFile(String flagName) throws FileNotFoundException {
-        String fileName = "config_file.txt";
+    public static String readFile(String fileNameSuffix, String flagName) throws FileNotFoundException {
+        String fileName = "config_file-" + fileNameSuffix + ".txt";
         Scanner scanner = new Scanner(new File(fileName));
         String line = "";
         while (scanner.hasNextLine()) {

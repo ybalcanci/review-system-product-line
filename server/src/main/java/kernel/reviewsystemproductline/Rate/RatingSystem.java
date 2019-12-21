@@ -10,16 +10,38 @@ public class RatingSystem {
     public RatingSystem(String type) {
 
         ratingFactory = new RatingFactory();
-        ratingFactory.getRating("parkingService", "restaurant");
-        ratingFactory.getRating("deliveryTime", "restaurant");
+        ratingFactory.getRating("parkingService", type);
 
-        castAndCrew = (RateCastAndCrew) ratingFactory.getRating("castAndCrew", "movie");
-        hasRateDirector = castAndCrew.getHasRateDirector();
-        hasRateActor = castAndCrew.getHasRateActor();
+
+        castAndCrew = (RateCastAndCrew) ratingFactory.getRating("castAndCrew", type);
+        if (castAndCrew != null) {
+            hasRateDirector = castAndCrew.getHasRateDirector();
+            hasRateActor = castAndCrew.getHasRateActor();
+        }
+        else {
+            hasRateActor = false;
+            hasRateDirector = false;
+        }
     }
 
     public RatingFactory getRatingFactory(){
         return ratingFactory;
+    }
+
+    public boolean isHasRateDirector() {
+        return hasRateDirector;
+    }
+
+    public void setHasRateDirector(boolean hasRateDirector) {
+        this.hasRateDirector = hasRateDirector;
+    }
+
+    public boolean isHasRateActor() {
+        return hasRateActor;
+    }
+
+    public void setHasRateActor(boolean hasRateActor) {
+        this.hasRateActor = hasRateActor;
     }
 
     @Override
