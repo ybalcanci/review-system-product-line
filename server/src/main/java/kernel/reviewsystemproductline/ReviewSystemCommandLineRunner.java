@@ -41,7 +41,7 @@ public class ReviewSystemCommandLineRunner implements CommandLineRunner {
 
         SearchingSystem restaurantSearch = new SearchByFood(new SearchByLocation(new RestaurantSearch()));
         System.out.println(restaurantSearch.search());
-        
+
 		Explore exploreSys = new Explore();
         System.out.println(exploreSys);
         //exploreSys.getRecommendationSys().getRecommendationFactory()
