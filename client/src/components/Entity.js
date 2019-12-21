@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/styles';
+import Tooltip from '@material-ui/core/Tooltip';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -8,6 +9,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import ExplicitIcon from '@material-ui/icons/Explicit';
+
 
 const styles = theme => ({
   card: {
@@ -30,6 +33,12 @@ class Entity extends Component {
     if (this.props.type === "movie") {
       return (
         <div>
+          {this.props['hasAgeLimit'] &&
+            <Tooltip title="Explicit: Only Adults">
+              <ExplicitIcon aria-label="explicit">
+              </ExplicitIcon>
+            </Tooltip>
+          }
           {this.props['hasTrailer'] &&
             <Button size="small" color="primary">
               Watch Trailer
@@ -47,6 +56,12 @@ class Entity extends Component {
     else if (this.props.type === "hotel") {
       return (
         <div>
+          {this.props['hasAgeLimit'] &&
+            <Tooltip title="Explicit: Only Adults">
+              <ExplicitIcon aria-label="explicit">
+              </ExplicitIcon>
+            </Tooltip>
+          }
           {this.props['hasRoomPrice'] &&
             <Button size="small" color="primary">
               See Room Prices
@@ -64,6 +79,7 @@ class Entity extends Component {
               Get Contact Info
         </Button>
           }
+          
         </div>
       );
     }
