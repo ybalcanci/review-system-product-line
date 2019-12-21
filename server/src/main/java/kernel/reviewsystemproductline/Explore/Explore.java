@@ -5,6 +5,7 @@ import kernel.reviewsystemproductline.Explore.Search.RestaurantSearch;
 import kernel.reviewsystemproductline.Explore.Search.SearchingSystem;
 import kernel.reviewsystemproductline.Helpers.*;
 import kernel.reviewsystemproductline.Explore.Recommendation.RecommendationSystem;
+import kernel.reviewsystemproductline.Explore.Filter.FilteringSystem;
 
 import java.io.FileNotFoundException;
 
@@ -14,6 +15,7 @@ public class Explore {
 
     private RecommendationSystem recommendationSys;
 	private SearchingSystem searchingSystem;
+	private FilteringSystem filteringSystem;
 
 
 	public Explore(String type) {

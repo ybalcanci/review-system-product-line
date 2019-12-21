@@ -11,6 +11,7 @@ public class RatingSystem {
 
         ratingFactory = new RatingFactory();
         ratingFactory.getRating("parkingService", "restaurant");
+        ratingFactory.getRating("deliveryTime", "restaurant");
 
         castAndCrew = (RateCastAndCrew) ratingFactory.getRating("castAndCrew", "movie");
         hasRateDirector = castAndCrew.getHasRateDirector();

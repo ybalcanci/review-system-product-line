@@ -16,17 +16,29 @@ public class RecommendationFactory {
                 '}';
     }
 
-    public Recommendation getRecommendation(String recType) {
+    public Recommendation getRecommendation(String recType, String type) {
         switch (recType) {
             case "restaurant":
-                hasRestaurantRecommendation = true;
-                return new RestaurantRecommendation();
+                if (type.equals("restaurant")) {
+                    hasRestaurantRecommendation = true;
+                    return new RestaurantRecommendation();
+                }else{
+                    System.out.println("Recommendation constraint is not satisfied");
+                }
             case "touristic":
-                hasTouristicRecommendation = true;
-                return new TouristicPlaceRecommendation();
+                if (type.equals("hotel")) {
+                    hasTouristicRecommendation = true;
+                    return new TouristicPlaceRecommendation();
+                }else{
+                    System.out.println("Recommendation constraint is not satisfied");
+                }
             case "theme":
-                hasThemeRecommendation = true;
-                return new ThemeRecommendation();
+                if (type.equals("restaurant") || type.equals("movie")) {
+                    hasThemeRecommendation = true;
+                    return new ThemeRecommendation();
+                }else{
+                    System.out.println("Recommendation constraint is not satisfied");
+                }
         }
         return null;
     }
