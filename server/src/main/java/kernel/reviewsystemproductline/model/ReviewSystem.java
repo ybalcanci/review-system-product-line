@@ -23,7 +23,7 @@ public class ReviewSystem {
 			case "movie":
 				this.informationSystem = new MovieInfo();
 				break;
-			case "rastaurant":
+			case "restaurant":
 				this.informationSystem = new RestaurantInfo();
 				break;
 		}
