@@ -1,6 +1,6 @@
-hasRecommendationSystem==true
+hasRecommendationSystem==false
 hasAgeLimit==true
-hasRateDirector==false
-hasRateActor==false
+hasRateDirector==true
+hasRateActor==true
 reviewSystemType==restaurant
-hasUploadImgFeature==true
+hasUploadImgFeature==false

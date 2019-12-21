@@ -37,6 +37,7 @@ public class ReviewSystemCommandLineRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		/*
 		InformationSystem restaurantInfo = new Contact(new FAQ(new RestaurantInfo()));
 		System.out.println(restaurantInfo.getInfo());
 
@@ -50,7 +51,7 @@ public class ReviewSystemCommandLineRunner implements CommandLineRunner {
 		ReviewSystem revSys = new ReviewSystem("hotel");
 		System.out.println(revSys.getRatingSystem());
 
-
+*/
 		//Explore exploreSys = new Explore();
 
 		Stream.of("hotel 1", "hotel 2").forEach(name -> {

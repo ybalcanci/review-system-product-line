@@ -55,7 +55,7 @@ public class RatingFactory {
                     hasRateParkingService = true;
                     return new RateParkingService();
                 }else{
-                    System.out.println("Rating constraint is not satisfied");
+                    System.out.println("Rating parkingService constraint is not satisfied");
                 }
                 break;
             case "hygiene":
@@ -63,7 +63,7 @@ public class RatingFactory {
                     hasRateAndSeeHygiene = true;
                     return new RateHygiene();
                 }else{
-                    System.out.println("Rating constraint is not satisfied");
+                    System.out.println("Rating hygiene constraint is not satisfied");
                 }
                 break;
             case "deliveryTime":
@@ -71,7 +71,7 @@ public class RatingFactory {
                     hasRateAndSeeDeliveryTime = true;
                     return new RateDeliveryTime();
                 }else{
-                    System.out.println("Rating constraint is not satisfied");
+                    System.out.println("Rating deliveryTime constraint is not satisfied");
                 }
                 break;
             case "waiters":
@@ -79,7 +79,7 @@ public class RatingFactory {
                     hasRateWaiters = true;
                     return new RateWaiters();
                 }else{
-                    System.out.println("Rating constraint is not satisfied");
+                    System.out.println("Rating waiters constraint is not satisfied");
                 }
                 break;
             case "castAndCrew":
@@ -87,7 +87,7 @@ public class RatingFactory {
                     hasRateCastAndCrew = true;
                     return new RateCastAndCrew();
                 }else{
-                    System.out.println("Rating constraint is not satisfied");
+                    System.out.println("Rating castAndCrew constraint is not satisfied");
                 }
                 break;
         }

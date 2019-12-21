@@ -10,7 +10,10 @@ public class RatingSystem {
     public RatingSystem(String type) {
 
         ratingFactory = new RatingFactory();
+        ratingFactory.getRating("deliveryTime", type);
         ratingFactory.getRating("parkingService", type);
+        ratingFactory.getRating("castAndCrew", type);
+
 
 
         castAndCrew = (RateCastAndCrew) ratingFactory.getRating("castAndCrew", type);
