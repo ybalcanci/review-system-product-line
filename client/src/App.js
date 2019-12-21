@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './components/Home'
-import Review from './components/Review'
+import Review from './components/Entity'
 import ReviewPage from './ReviewPage'
 
 /***

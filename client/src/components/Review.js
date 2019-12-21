@@ -8,15 +8,23 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 
 const styles = theme => ({
-        card: {
-            maxWidth: 420,
-            margin: 20
-          },
-          media: {
-            height: 140,
-          } 
+    card: {
+      minWidth: 275,
+    },
+    bullet: {
+      display: 'inline-block',
+      margin: '0 2px',
+      transform: 'scale(0.8)',
+    },
+    title: {
+      fontSize: 14,
+    },
+    pos: {
+      marginBottom: 12,
+    },
   });
 
 class Review extends Component {
@@ -70,76 +78,30 @@ class Review extends Component {
   }
     render() {
         const { classes } = this.props;
-      if(this.props.type === 'movie')
-      {
         return (
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image='https://vignette.wikia.nocookie.net/lotr/images/d/df/Fellowship1.jpg/revision/latest?cb=20190711180551'
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                  {this.props['entityName']}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                  Lord of the Rings: Fellowship of the Rings
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                  Director: {this.props['director']}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                  Year: {this.props['year']}
-              </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              {this.renderButtons()}
-            </CardActions>
-          </Card>
+            <Card className={classes.card}>
+                <CardContent>
+                    <Typography className={classes.title} gutterBottom variant="h5" component="h2">
+                        WORST MOVIE OFF ALL TIMES
+                </Typography>
+                    <Typography gutterBottom variant="body2" component="p">
+                        <Link href="#" variant="body2">
+                            Mr.Siksuyu
+                    </Link>
+                        {" "} 22nd May
+                </Typography>
+                    <Typography variant="body2" component="p">
+                        Peter Jackson managed to ruin the best books of all time. The cast is terrible. Story telling is terrible. What a waste of 2+ hours
+                <br />
+                        a benevolent smile
+                </Typography>
+                </CardContent>
+                <CardActions>
+                    <Button size="small">Read More</Button>
+                </CardActions>
+            </Card>
         );
-      }
-      else if (this.props.type === 'hotel')
-      {
-        return (
-          <Card className={classes.card}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image='http://www.sheratoncesme.com/upload/slider/slider_2019-05-20_17-38-48.jpg'
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                  Şerıtın Hotel
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                  Hotel name: Şerıtın
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                  Address: Isengard mahallesi / MIDDLE EARTH
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                  Star: 5 star hotel
-              </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              {this.renderButtons()}
-            </CardActions>
-          </Card>
-        );
-
-      }
-      else
-      {
-        console.log("")
-        return;
-      
-      }
-    }
+        }
 }
 
 export default withStyles(styles)(Review);
