@@ -12,8 +12,10 @@ import kernel.reviewsystemproductline.repository.MovieRepository;
 import kernel.reviewsystemproductline.repository.RestaurantRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import kernel.reviewsystemproductline.Explore.Explore;
 
 import java.util.stream.Stream;
+
 
 @Component
 public class ReviewSystemCommandLineRunner implements CommandLineRunner {
@@ -32,6 +34,8 @@ public class ReviewSystemCommandLineRunner implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		InformationSystem restaurantInfo = new Contact(new FAQ(new RestaurantInfo()));
 		System.out.println(restaurantInfo.getInfo());
+
+		//Explore exploreSys = new Explore();
 
 		Stream.of("hotel 1", "hotel 2").forEach(name -> {
 			Hotel hotel = new Hotel(name);
