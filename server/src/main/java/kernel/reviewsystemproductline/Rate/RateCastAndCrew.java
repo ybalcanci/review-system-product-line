@@ -15,14 +15,14 @@ public class RateCastAndCrew implements Rating {
         return hasRateActor;
     }
 
-    public Boolean hasRateDirector;
-    public Boolean hasRateActor;
+    public Boolean hasRateDirector = false;
+    public Boolean hasRateActor = false;
 
     public RateCastAndCrew() {
 
         try {
-            hasRateDirector = Boolean.parseBoolean(ReadFile.readFile("hasRateDirector"));
-            hasRateActor = Boolean.parseBoolean(ReadFile.readFile("hasRateActor"));
+            hasRateDirector = Boolean.parseBoolean(ReadFile.readFile("movie", "hasRateDirector"));
+            hasRateActor = Boolean.parseBoolean(ReadFile.readFile("movie", "hasRateActor"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

@@ -38,7 +38,7 @@ public class Explore {
 
         // If specified, create Recommendation System
         try {
-            hasRecommendationSystem = Boolean.parseBoolean(ReadFile.readFile("hasRecommendationSystem"));
+            hasRecommendationSystem = Boolean.parseBoolean(ReadFile.readFile(type, "hasRecommendationSystem"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -46,7 +46,16 @@ public class Explore {
             recommendationSys = new RecommendationSystem();
         }
     }
-    public boolean getHasRecommendation(){
+
+	public SearchingSystem getSearchingSystem() {
+		return searchingSystem;
+	}
+
+	public void setSearchingSystem(SearchingSystem searchingSystem) {
+		this.searchingSystem = searchingSystem;
+	}
+
+	public boolean getHasRecommendation(){
         return hasRecommendationSystem;
     }
 
@@ -59,7 +68,7 @@ public class Explore {
     public String toString() {
         return "Explore{" +
                 "hasRecommendationSystem=" + hasRecommendationSystem +
-                ", recommendationSys=" + recommendationSys.getRecommendationFactory() +
+                ", recommendationSys=" + (hasRecommendationSystem ? recommendationSys.getRecommendationFactory() : "" ) +
                 '}';
     }
 }

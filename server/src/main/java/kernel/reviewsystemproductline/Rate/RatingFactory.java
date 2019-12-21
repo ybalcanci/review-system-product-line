@@ -8,15 +8,44 @@ public class RatingFactory {
     boolean hasRateWaiters = false;
     boolean hasRateCastAndCrew = false;
 
-    @Override
-    public String toString() {
-        return "RatingFactory{" +
-                "hasRateParkingService=" + hasRateParkingService +
-                ", hasRateAndSeeHygiene=" + hasRateAndSeeHygiene +
-                ", hasRateAndSeeDeliveryTime=" + hasRateAndSeeDeliveryTime +
-                ", hasRateWaiters=" + hasRateWaiters +
-                ", hasRateCastAndCrew=" + hasRateCastAndCrew +
-                '}';
+    public boolean isHasRateParkingService() {
+        return hasRateParkingService;
+    }
+
+    public void setHasRateParkingService(boolean hasRateParkingService) {
+        this.hasRateParkingService = hasRateParkingService;
+    }
+
+    public boolean isHasRateAndSeeHygiene() {
+        return hasRateAndSeeHygiene;
+    }
+
+    public void setHasRateAndSeeHygiene(boolean hasRateAndSeeHygiene) {
+        this.hasRateAndSeeHygiene = hasRateAndSeeHygiene;
+    }
+
+    public boolean isHasRateAndSeeDeliveryTime() {
+        return hasRateAndSeeDeliveryTime;
+    }
+
+    public void setHasRateAndSeeDeliveryTime(boolean hasRateAndSeeDeliveryTime) {
+        this.hasRateAndSeeDeliveryTime = hasRateAndSeeDeliveryTime;
+    }
+
+    public boolean isHasRateWaiters() {
+        return hasRateWaiters;
+    }
+
+    public void setHasRateWaiters(boolean hasRateWaiters) {
+        this.hasRateWaiters = hasRateWaiters;
+    }
+
+    public boolean isHasRateCastAndCrew() {
+        return hasRateCastAndCrew;
+    }
+
+    public void setHasRateCastAndCrew(boolean hasRateCastAndCrew) {
+        this.hasRateCastAndCrew = hasRateCastAndCrew;
     }
 
     public Rating getRating(String ratingType, String type) {
@@ -58,6 +87,17 @@ public class RatingFactory {
                 }
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "RatingFactory{" +
+                "hasRateParkingService=" + hasRateParkingService +
+                ", hasRateAndSeeHygiene=" + hasRateAndSeeHygiene +
+                ", hasRateAndSeeDeliveryTime=" + hasRateAndSeeDeliveryTime +
+                ", hasRateWaiters=" + hasRateWaiters +
+                ", hasRateCastAndCrew=" + hasRateCastAndCrew +
+                '}';
     }
 
 }
