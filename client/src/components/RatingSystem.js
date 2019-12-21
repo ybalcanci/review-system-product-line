@@ -20,11 +20,11 @@ class RatingSystem extends Component {
     {
         if(this.props['type'] === 'movie')
         {
-            if(this.props['hasRateActor'] && this.props['hasRateDirector'] )
-            {
             return(
                 <div>
-                    <Box component="fieldset" mb={3} borderColor="transparent">
+                    {
+                        this.props['hasRateActor'] &&
+                        <Box component="fieldset" mb={3} borderColor="transparent">
                         <Typography component="legend">Rate Actor:</Typography>
                         <Rating
                             name="simple-controlled"
@@ -32,7 +32,11 @@ class RatingSystem extends Component {
                             onChange={this.setValue}
                     />
                     </Box>
-                    <Box component="fieldset" mb={3} borderColor="transparent">
+
+                    }
+                    {
+                        this.props['hasRateDirector'] &&
+                        <Box component="fieldset" mb={3} borderColor="transparent">
                         <Typography component="legend">Rate Director:</Typography>
                         <Rating
                             name="simple-controlled"
@@ -40,33 +44,10 @@ class RatingSystem extends Component {
                             onChange={this.setValue}
                     />
                     </Box>
-                </div>
-
-            );
-            }
-            else if(!this.props['hasRateActor'] && this.props['hasRateDirector'] )
-            {
-            return(
-                <div>
-                
-                    <Box component="fieldset" mb={3} borderColor="transparent">
-                        <Typography component="legend">Rate Director:</Typography>
-                        <Rating
-                            name="simple-controlled"
-                            value={this.state.newValue}
-                            onChange={this.setValue}
-                    />
-                    </Box>
-                </div>
-
-            );
-            }
-            else if(this.props['hasRateActor'] && !this.props['hasRateDirector'] )
-            {
-            return(
-                <div>
-                
-                    <Box component="fieldset" mb={3} borderColor="transparent">
+                    }
+                    {
+                        this.props['hasRateCastAndCrew'] &&
+                        <Box component="fieldset" mb={3} borderColor="transparent">
                         <Typography component="legend">Rate Cast and Crew:</Typography>
                         <Rating
                             name="simple-controlled"
@@ -74,77 +55,97 @@ class RatingSystem extends Component {
                             onChange={this.setValue}
                     />
                     </Box>
+                    }
+                    
                 </div>
 
             );
-            }
-            else
-            {
-                return;
-            }
         }
         
         else if(this.props['type'] === 'hotel')
         {
-            if(this.props['hasRateParkingService'] && this.props['hasRateAndSeeHygiene'] )
-            {
                 return(
                     <div>
-                        <Box component="fieldset" mb={3} borderColor="transparent">
-                            <Typography component="legend">Rate Parking Service</Typography>
+                        {
+                            this.props['hasRateParkingService'] &&
+                            <Box component="fieldset" mb={3} borderColor="transparent">
+                            <Typography component="legend">Rate Parking Service:</Typography>
                             <Rating
                                 name="simple-controlled"
                                 value={this.state.newValue}
                                 onChange={this.setValue}
                         />
                         </Box>
-                        <Box component="fieldset" mb={3} borderColor="transparent">
-                            <Typography component="legend"> Rate and See Hygiene</Typography>
+    
+                        }
+                        {
+                            this.props['hasRateAndSeeHygiene'] &&
+                            <Box component="fieldset" mb={3} borderColor="transparent">
+                            <Typography component="legend">Rate Hygiene:</Typography>
                             <Rating
                                 name="simple-controlled"
                                 value={this.state.newValue}
                                 onChange={this.setValue}
                         />
                         </Box>
+                        }                        
                     </div>
     
                 );
-            }
-            else if(!this.props['hasRateParkingService'] && this.props['hasRateAndSeeHygiene'] )
-            {
+        }
+        else if(this.props['type'] === 'restaurant')
+        {
                 return(
                     <div>
-                        <Box component="fieldset" mb={3} borderColor="transparent">
-                            <Typography component="legend"> Rate and See Hygiene</Typography>
+                        {
+                            this.props['hasRateParkingService'] &&
+                            <Box component="fieldset" mb={3} borderColor="transparent">
+                            <Typography component="legend">Rate Parking Service:</Typography>
                             <Rating
                                 name="simple-controlled"
                                 value={this.state.newValue}
                                 onChange={this.setValue}
                         />
                         </Box>
-                    </div>
-                );
-            }
-            else if(this.props['hasRateParkingService'] && !this.props['hasRateAndSeeHygiene'] )
-            {
-                return(
-                    <div>
-                        <Box component="fieldset" mb={3} borderColor="transparent">
-                            <Typography component="legend">Rate Parking Service</Typography>
+    
+                        }
+                        {
+                            this.props['hasRateAndSeeHygiene'] &&
+                            <Box component="fieldset" mb={3} borderColor="transparent">
+                            <Typography component="legend">Rate Hygiene:</Typography>
                             <Rating
                                 name="simple-controlled"
                                 value={this.state.newValue}
                                 onChange={this.setValue}
                         />
                         </Box>
+                        }
+                        {
+                            this.props['hasRateAndSeeDeliveryTime'] &&
+                            <Box component="fieldset" mb={3} borderColor="transparent">
+                            <Typography component="legend">Rate Delivery Time:</Typography>
+                            <Rating
+                                name="simple-controlled"
+                                value={this.state.newValue}
+                                onChange={this.setValue}
+                        />
+                        </Box>
+                        }
+                        {
+                            this.props['hasRateWaiters'] &&
+                            <Box component="fieldset" mb={3} borderColor="transparent">
+                            <Typography component="legend">Rate Waiters:</Typography>
+                            <Rating
+                                name="simple-controlled"
+                                value={this.state.newValue}
+                                onChange={this.setValue}
+                        />
+                        </Box>
+                        }
+                        
                     </div>
     
                 );
-            }
-            else
-            {
-                return;
-            }
         }
         else
         {

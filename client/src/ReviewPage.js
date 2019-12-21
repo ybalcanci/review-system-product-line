@@ -33,7 +33,7 @@ class ReviewPage extends Component {
 
     componentWillMount() {
         //fetchMovieSystemConfig.fetchMovieSystemConfig(this.props.type)
-        fetchMovieSystemConfig.fetchMovieSystemConfig("restaurant")
+        fetchMovieSystemConfig.fetchMovieSystemConfig("movie")
             .then(response => {
                 console.log(response)
                 this.setState({
@@ -76,8 +76,6 @@ class ReviewPage extends Component {
                     <Entity
                         hasAgeLimit={this.state.hasAgeLimit}
                         hasRecommendationSystem={this.state.hasRecommendationSystem}
-                        hasRateActor={this.state.hasRateActor}
-                        hasRateDirector={this.state.hasRateDirector}
                         hasUploadImage={this.state.hasUploadImage}
                         hasFAQ={this.state.hasFAQ}
                         hasCast={this.state.hasCast}
@@ -87,11 +85,6 @@ class ReviewPage extends Component {
                         hasSearchByLocation={this.state.hasSearchByLocation}
                         hasSearchByCast={this.state.hasSearchByCast}
                         hasSearchByFood={this.state.hasSearchByFood}
-                        hasRateParkingService={this.state.hasRateParkingService}
-                        hasRateAndSeeHygiene={this.state.hasRateAndSeeHygiene}
-                        hasRateAndSeeDeliveryTime={this.state.hasRateAndSeeDeliveryTime}
-                        hasRateWaiters={this.state.hasRateWaiters}
-                        hasRateCastAndCrew={this.state.hasRateCastAndCrew}
                         hasRestaurantRecommendation={this.state.hasRestaurantRecommendation}
                         hasTouristicRecommendation={this.state.hasTouristicRecommendation}
                         hasThemeRecommendation={this.state.hasThemeRecommendation}
@@ -119,7 +112,16 @@ class ReviewPage extends Component {
                         (
                             <div>
                                 <Button size="small" onClick={this.showOrHideReviewSection}>Hide Review Section</Button>
-                                <RatingSystem hasRateActor={this.state.hasRateActor} hasRateDirector={this.state.hasRateDirector} type='movie' />
+                                <RatingSystem
+                                    hasRateActor={this.state.hasRateActor}
+                                    hasRateDirector={this.state.hasRateDirector}
+                                    hasRateParkingService={this.state.hasRateParkingService}
+                                    hasRateAndSeeHygiene={this.state.hasRateAndSeeHygiene}
+                                    hasRateAndSeeDeliveryTime={this.state.hasRateAndSeeDeliveryTime}
+                                    hasRateWaiters={this.state.hasRateWaiters}
+                                    hasRateCastAndCrew={this.state.hasRateCastAndCrew}
+                                    type={this.state.type}
+                                />
                             </div>
                         )
                     }

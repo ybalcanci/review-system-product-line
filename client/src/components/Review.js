@@ -86,7 +86,7 @@ class Review extends Component {
                 </Typography>
                     <Typography gutterBottom variant="body2" component="p">
                         <Link href="#" variant="body2">
-                            Mr.Siksuyu
+                            Mr.Kullanıcı
                     </Link>
                         {" "} 22nd May
                 </Typography>
