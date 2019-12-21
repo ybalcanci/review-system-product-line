@@ -5,6 +5,10 @@ import java.io.FileNotFoundException;
 
 public class UtilitySystem {
 
+    public boolean isHasUploadImgFeature() {
+        return hasUploadImgFeature;
+    }
+
     boolean hasUploadImgFeature;
     Image imageUtil;
 

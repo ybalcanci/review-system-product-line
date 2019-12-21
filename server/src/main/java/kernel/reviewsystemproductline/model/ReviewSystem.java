@@ -33,9 +33,9 @@ public class ReviewSystem {
 		this.explore = new Explore(type);
 
 		reviewSystemContext = new ReviewSystemContext(
-				true,//hasagelimit
+		        explore.getFilteringSystem().isHasAgeLimit(),
 				explore.getHasRecommendation(), ratingSystem.isHasRateActor(), ratingSystem.isHasRateDirector(),
-				true,//hasuploadimage
+				utilitySystem.isHasUploadImgFeature(),
 				informationSystem.getInfo().isHasFAQ(),
 				informationSystem.getInfo().isHasCast(),
 				informationSystem.getInfo().isHasTrailer(),

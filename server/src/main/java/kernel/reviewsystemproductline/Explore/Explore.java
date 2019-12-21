@@ -18,6 +18,10 @@ public class Explore {
 	private FilteringSystem filteringSystem;
 
 
+	public FilteringSystem getFilteringSystem() {
+		return filteringSystem;
+	}
+
 	public Explore(String type) {
 		this.type = type;
 

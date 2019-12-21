@@ -7,6 +7,10 @@ import java.io.FileNotFoundException;
 
 public class FilteringSystem {
 
+    public boolean isHasAgeLimit() {
+        return hasAgeLimit;
+    }
+
     boolean hasAgeLimit;
     AgeLimitation ageLim;
 
