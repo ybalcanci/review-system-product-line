@@ -31,7 +31,7 @@ class ReviewPage extends Component {
         this.setState(oldState => ({ isReviewSectionVisible: !oldState.isReviewSectionVisible }))
     };
 
-    componentDidMount() {
+    componentWillMount() {
         //fetchMovieSystemConfig.fetchMovieSystemConfig(this.props.type)
         fetchMovieSystemConfig.fetchMovieSystemConfig("restaurant")
             .then(response => {

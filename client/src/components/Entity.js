@@ -58,6 +58,12 @@ class Entity extends Component {
               See Touristic Places Nearby
         </Button>
           }
+
+          {this.props['hasContact'] &&
+            <Button size="small" color="primary">
+              Get Contact Info
+        </Button>
+          }
         </div>
       );
     }

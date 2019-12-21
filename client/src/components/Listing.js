@@ -89,10 +89,7 @@ const tiers = [
 export default function Pricing() {
     const classes = useStyles();
     const [userName, setUserName] = useState('');
-    useEffect(() => {
-      Filter()
-           .then(res => setUserName(res.hasCast));
-    }, []);
+
     /*const booleans = then(response => {
       console.log(response)
       
