@@ -13,7 +13,4 @@ public class Cast extends InfoDecorator {
 		currentInfo.setHasCast(true);
 		return currentInfo;
 	}
-
-	MovieInfo movieInfo = new MovieInfo();
-	InformationSystem inf = new Trailer(new Cast(movieInfo));
 }
