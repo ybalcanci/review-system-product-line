@@ -24,7 +24,8 @@ public class ReviewSystem {
 				this.informationSystem = new RoomPrice(new FAQ(new HotelInfo()));
 				break;
 			case "movie":
-				this.informationSystem = new Cast(new FAQ(new Trailer(new MovieInfo())));
+				this.informationSystem = new MovieInfo();
+				//this.informationSystem = new Cast(new FAQ(new Trailer(new MovieInfo()))); // TODO Demo Case
 				break;
 			case "restaurant":
 				this.informationSystem = new RestaurantInfo();

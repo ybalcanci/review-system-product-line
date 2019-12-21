@@ -8,9 +8,11 @@ public class RecommendationSystem {
 
         recommendationFactory = new RecommendationFactory();
         recommendationFactory.getRecommendation("touristic", type);
+        //recommendationFactory.getRecommendation("theme", type);
 
         //recommendationFactory.getRecommendation("touristic", type);
 
+        // has cast, has trailer
         System.out.println("recommendation system is created");
     }
 
