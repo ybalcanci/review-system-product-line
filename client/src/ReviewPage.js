@@ -41,7 +41,7 @@ class ReviewPage extends Component {
                     hasRecommendationSystem: response.hasRecommendationSystem,
                     hasRateActor: response.hasRateActor,
                     hasRateDirector: response.hasRateDirector,
-                    hasUploadImage: response.hasUploadImage,
+                    hasUploadImageFeature: response.hasUploadImageFeature,
                     hasFAQ: response.hasFAQ,
                     hasCast: response.hasCast,
                     hasTrailer: response.hasTrailer,
@@ -76,7 +76,6 @@ class ReviewPage extends Component {
                     <Entity
                         hasAgeLimit={this.state.hasAgeLimit}
                         hasRecommendationSystem={this.state.hasRecommendationSystem}
-                        hasUploadImage={this.state.hasUploadImage}
                         hasFAQ={this.state.hasFAQ}
                         hasCast={this.state.hasCast}
                         hasTrailer={this.state.hasTrailer}
@@ -120,6 +119,7 @@ class ReviewPage extends Component {
                                     hasRateAndSeeDeliveryTime={this.state.hasRateAndSeeDeliveryTime}
                                     hasRateWaiters={this.state.hasRateWaiters}
                                     hasRateCastAndCrew={this.state.hasRateCastAndCrew}
+                                    hasUploadImageFeature={this.state.hasUploadImageFeature}
                                     type={this.state.type}
                                 />
                             </div>
