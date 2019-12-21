@@ -3,12 +3,13 @@ package kernel.reviewsystemproductline.controller;
 import kernel.reviewsystemproductline.model.Hotel;
 import kernel.reviewsystemproductline.model.Movie;
 import kernel.reviewsystemproductline.model.Restaurant;
-import kernel.reviewsystemproductline.model.ReviewedEntity;
 import kernel.reviewsystemproductline.repository.HotelRepository;
 import kernel.reviewsystemproductline.repository.MovieRepository;
 import kernel.reviewsystemproductline.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
