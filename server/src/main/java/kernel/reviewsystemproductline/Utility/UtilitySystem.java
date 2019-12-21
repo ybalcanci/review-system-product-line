@@ -8,11 +8,11 @@ public class UtilitySystem {
     boolean hasUploadImgFeature;
     Image imageUtil;
 
-    public UtilitySystem() {
+    public UtilitySystem(String type) {
         System.out.println("utility system is generated");
 
         try {
-            hasUploadImgFeature = Boolean.parseBoolean(ReadFile.readFile("hasUploadImgFeature"));
+            hasUploadImgFeature = Boolean.parseBoolean(ReadFile.readFile(type, "hasUploadImgFeature"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

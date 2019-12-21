@@ -57,6 +57,7 @@ public class RatingFactory {
                 }else{
                     System.out.println("Rating constraint is not satisfied");
                 }
+                break;
             case "hygiene":
                 if(type.equals("hotel")){
                     hasRateAndSeeHygiene = true;
@@ -64,6 +65,7 @@ public class RatingFactory {
                 }else{
                     System.out.println("Rating constraint is not satisfied");
                 }
+                break;
             case "deliveryTime":
                 if(type.equals("restaurant")){
                     hasRateAndSeeDeliveryTime = true;
@@ -71,6 +73,7 @@ public class RatingFactory {
                 }else{
                     System.out.println("Rating constraint is not satisfied");
                 }
+                break;
             case "waiters":
                 if(type.equals("restaurant")){
                     hasRateWaiters = true;
@@ -78,6 +81,7 @@ public class RatingFactory {
                 }else{
                     System.out.println("Rating constraint is not satisfied");
                 }
+                break;
             case "castAndCrew":
                 if(type.equals("movie")){
                     hasRateCastAndCrew = true;
@@ -85,6 +89,7 @@ public class RatingFactory {
                 }else{
                     System.out.println("Rating constraint is not satisfied");
                 }
+                break;
         }
         return null;
     }

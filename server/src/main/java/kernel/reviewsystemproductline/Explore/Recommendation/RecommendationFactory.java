@@ -33,13 +33,14 @@ public class RecommendationFactory {
 
     public Recommendation getRecommendation(String recType, String type) {
         switch (recType) {
-            case "restaurant":
+            case "restaurantRecommendation":
                 if (type.equals("restaurant")) {
                     hasRestaurantRecommendation = true;
                     return new RestaurantRecommendation();
                 }else{
                     System.out.println("Recommendation constraint is not satisfied");
                 }
+                break;
             case "touristic":
                 if (type.equals("hotel")) {
                     hasTouristicRecommendation = true;
@@ -47,6 +48,7 @@ public class RecommendationFactory {
                 }else{
                     System.out.println("Recommendation constraint is not satisfied");
                 }
+                break;
             case "theme":
                 if (type.equals("restaurant") || type.equals("movie")) {
                     hasThemeRecommendation = true;
@@ -54,6 +56,7 @@ public class RecommendationFactory {
                 }else{
                     System.out.println("Recommendation constraint is not satisfied");
                 }
+                break;
         }
         return null;
     }

@@ -4,10 +4,12 @@ public class RecommendationSystem {
 
     private RecommendationFactory recommendationFactory;
 
-    public RecommendationSystem() {
+    public RecommendationSystem(String type) {
 
         recommendationFactory = new RecommendationFactory();
-        recommendationFactory.getRecommendation("restaurant");
+        recommendationFactory.getRecommendation("touristic", type);
+
+        //recommendationFactory.getRecommendation("touristic", type);
 
         System.out.println("recommendation system is created");
     }

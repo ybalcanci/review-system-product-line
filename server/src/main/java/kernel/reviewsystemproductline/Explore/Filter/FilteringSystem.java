@@ -14,7 +14,7 @@ public class FilteringSystem {
         System.out.println("filtering system is generated");
 
         try {
-            hasAgeLimit = Boolean.parseBoolean(ReadFile.readFile("hasAgeLimit"));
+            hasAgeLimit = Boolean.parseBoolean(ReadFile.readFile(type, "hasAgeLimit"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

@@ -3,6 +3,7 @@ package kernel.reviewsystemproductline.model;
 import kernel.reviewsystemproductline.Explore.Explore;
 import kernel.reviewsystemproductline.Rate.RatingSystem;
 import kernel.reviewsystemproductline.info.*;
+import kernel.reviewsystemproductline.Utility.UtilitySystem;
 
 public class ReviewSystem {
 	private ReviewSystemContext reviewSystemContext;
@@ -10,10 +11,12 @@ public class ReviewSystem {
 	private InformationSystem informationSystem;
 	private Explore explore;
 	private RatingSystem ratingSystem;
+	private UtilitySystem utilitySystem;
 	public ReviewSystem(String type) {
 
 		this.type = type;
 		ratingSystem = new RatingSystem(type);
+        utilitySystem = new UtilitySystem(type);
 
 		switch (type){
 			case "hotel":

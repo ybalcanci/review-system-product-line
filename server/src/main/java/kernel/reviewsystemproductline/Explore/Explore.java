@@ -33,6 +33,8 @@ public class Explore {
 				break;
 		}
 
+        filteringSystem = new FilteringSystem(type);
+
         System.out.println("explore system is created");
 
         // Create Search And Filter System
@@ -45,7 +47,7 @@ public class Explore {
             e.printStackTrace();
         }
         if (hasRecommendationSystem) {
-            recommendationSys = new RecommendationSystem();
+            recommendationSys = new RecommendationSystem(type);
         }
     }
 
