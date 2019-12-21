@@ -2,7 +2,8 @@
 logs
 *.log
 .idea/**
-
+*.iml
+**/.idea/**
 **/*.idea
 **/*.class
 
