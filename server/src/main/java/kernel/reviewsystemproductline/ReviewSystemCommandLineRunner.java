@@ -1,5 +1,9 @@
 package kernel.reviewsystemproductline;
 
+import kernel.reviewsystemproductline.info.Contact;
+import kernel.reviewsystemproductline.info.FAQ;
+import kernel.reviewsystemproductline.info.InformationSystem;
+import kernel.reviewsystemproductline.info.RestaurantInfo;
 import kernel.reviewsystemproductline.model.Hotel;
 import kernel.reviewsystemproductline.model.Movie;
 import kernel.reviewsystemproductline.model.Restaurant;
@@ -26,6 +30,9 @@ public class ReviewSystemCommandLineRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		InformationSystem restaurantInfo = new Contact(new FAQ(new RestaurantInfo()));
+		System.out.println(restaurantInfo.getInfo());
+
 		Stream.of("hotel 1", "hotel 2").forEach(name -> {
 			Hotel hotel = new Hotel(name);
 			hotelRepository.save(hotel);
