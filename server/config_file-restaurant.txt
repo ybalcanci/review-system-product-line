@@ -1,0 +1,6 @@
+hasRecommendationSystem==false
+hasAgeLimit==true
+hasRateDirector==true
+hasRateActor==true
+reviewSystemType==restaurant
+hasUploadImgFeature==false

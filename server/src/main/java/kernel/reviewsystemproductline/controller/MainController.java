@@ -1,19 +1,18 @@
 package kernel.reviewsystemproductline.controller;
 
-import kernel.reviewsystemproductline.model.Hotel;
-import kernel.reviewsystemproductline.model.Movie;
-import kernel.reviewsystemproductline.model.Restaurant;
-import kernel.reviewsystemproductline.model.ReviewedEntity;
+import kernel.reviewsystemproductline.model.*;
 import kernel.reviewsystemproductline.repository.HotelRepository;
 import kernel.reviewsystemproductline.repository.MovieRepository;
 import kernel.reviewsystemproductline.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+@CrossOrigin(origins = {"http://localhost:3000"})
 public class MainController {
 
 	@Autowired
@@ -25,13 +24,34 @@ public class MainController {
 	@Autowired
 	private RestaurantRepository restaurantRepository;
 
-/*
-	@PostMapping("/hotels")
-	public Hotel newHotel(@RequestBody Hotel hotel) {
-		System.out.println("New Post Request: " + hotel);
-		return hotelRepository.save(hotel);
+	/*
+		@PostMapping("/hotels")
+		public Hotel newHotel(@RequestBody Hotel hotel) {
+			System.out.println("New Post Request: " + hotel);
+			return hotelRepository.save(hotel);
+		}
+	*/
+	@GetMapping("/hotel")
+	public ReviewSystemContext hotelReviewSystem() {
+		ReviewSystemContext reviewSystem = new ReviewSystem("hotel").getReviewSystemContext();
+		System.out.println(reviewSystem);
+		return reviewSystem;
 	}
-*/
+
+	@GetMapping("/movie")
+	public ReviewSystemContext movieReviewSystem() {
+		ReviewSystemContext reviewSystem = new ReviewSystem("movie").getReviewSystemContext();
+		System.out.println(reviewSystem);
+		return reviewSystem;
+	}
+
+	@GetMapping("/restaurant")
+	public ReviewSystemContext restaurantReviewSystem() {
+		ReviewSystemContext reviewSystem = new ReviewSystem("restaurant").getReviewSystemContext();
+		System.out.println(reviewSystem);
+		return reviewSystem;
+	}
+
 	@GetMapping("/hotels")
 	public List<Hotel> hotels() {
 		List<Hotel> data = hotelRepository.findAll();

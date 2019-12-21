@@ -1,0 +1,6 @@
+hasRecommendationSystem==true
+hasAgeLimit==true
+hasRateDirector==false
+hasRateActor==true
+reviewSystemType==hotel
+hasUploadImgFeature==true

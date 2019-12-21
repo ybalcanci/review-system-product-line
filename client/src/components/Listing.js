@@ -14,7 +14,6 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import { renderAs } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -65,7 +64,7 @@ const useStyles = makeStyles(theme => ({
   
 const tiers = [
 {
-    title: 'Hotel Review',
+    title: 'Anan',
     path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS78aY9cQ2xD09zNdGL4ekYGHjLELKukyFaNRaH0wnHzCHF1U33',
     buttonText: 'Sign up for free',
     buttonVariant: 'contained',
@@ -115,11 +114,9 @@ export default function Pricing() {
                     </ul>
                   </CardContent>
                   <CardActions>
-                    
-                    <Button to="/listing" renderAs={Link} fullWidth variant={tier.buttonVariant} color="primary" >
-                        {tier.buttonText}
+                    <Button fullWidth variant={tier.buttonVariant} color="primary">
+                      {tier.buttonText}
                     </Button>
-                 
                   </CardActions>
                 </Card>
               </Grid>
