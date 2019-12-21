@@ -31,9 +31,23 @@ public class MainController {
 			return hotelRepository.save(hotel);
 		}
 	*/
-	@GetMapping("/")
-	public ReviewSystemContext reviewSystem() {
+	@GetMapping("/hotel_reviews")
+	public ReviewSystemContext hotelReviewSystem() {
 		ReviewSystemContext reviewSystem = new ReviewSystem("hotel").getReviewSystemContext();
+		System.out.println(reviewSystem);
+		return reviewSystem;
+	}
+
+	@GetMapping("/movie_reviews")
+	public ReviewSystemContext movieReviewSystem() {
+		ReviewSystemContext reviewSystem = new ReviewSystem("movie").getReviewSystemContext();
+		System.out.println(reviewSystem);
+		return reviewSystem;
+	}
+
+	@GetMapping("/restaurant_reviews")
+	public ReviewSystemContext restaurantReviewSystem() {
+		ReviewSystemContext reviewSystem = new ReviewSystem("restaurant").getReviewSystemContext();
 		System.out.println(reviewSystem);
 		return reviewSystem;
 	}
