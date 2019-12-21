@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -14,6 +14,7 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import fetchMovieSystemConfig from '../services/fetchConfigFile'
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -49,7 +50,7 @@ const useStyles = makeStyles(theme => ({
     },
     cardPricing: {
       display: 'flex',
-      justifyContent: 'left',
+      justifyContent: 'center',
       alignItems: 'baseline',
       marginBottom: theme.spacing(2),
     },
@@ -64,7 +65,7 @@ const useStyles = makeStyles(theme => ({
       },
     },
 }));
-  
+const Filter = fetchMovieSystemConfig.fetchMovieSystemConfig;
 const tiers = [
 {
     title: 'Hotel 1',
@@ -87,14 +88,28 @@ const tiers = [
 ];
 export default function Pricing() {
     const classes = useStyles();
-  
+    const [userName, setUserName] = useState('');
+    useEffect(() => {
+      Filter()
+           .then(res => setUserName(res.hasCast));
+    }, []);
+    /*const booleans = then(response => {
+      console.log(response)
+      
+      
+      //type: response.type, hasRateActor: response.hasRateActor, hasRateDirector: response.hasRateDirector}
+     // console.log(this.hasCastInfo)
+     // console.log(this.hasTrailer)
+    });*/
+    
+    console.log(setUserName)
     return (
       <React.Fragment>
         <CssBaseline />
         {/* Hero unit */}
         <Container maxWidth="sm" component="main" className={classes.heroContent}>
           <Typography component="h1" variant="h2" align="center" gutterBottom>
-            Hotel Review System
+            
           </Typography>
         </Container>
         {/* End hero unit */}
@@ -113,14 +128,18 @@ export default function Pricing() {
                   />
                   <CardContent>
                     <ul>
-                        <img src={tier.path} width="193" height="130"></img>
-                        <Typography variant="h5" align="center" color="textSecondary" component="p">
-                          {tier.explanation}
-                        </Typography>
+                        <div>
+                          <img src={tier.path} width="193" height="130"></img>
+                         
+                          <Typography variant="h5" align="center" color="textSecondary" component="p">
+                              {tier.explanation}
+                          </Typography>
+                          
+                        </div>
                     </ul>
                   </CardContent>
                   <CardActions>
-                    <Button fullWidth variant={tier.buttonVariant} color="primary">
+                    <Button href="/reviewPage" fullWidth variant={tier.buttonVariant} color="primary">
                       Learn More
                     </Button>
                   </CardActions>
