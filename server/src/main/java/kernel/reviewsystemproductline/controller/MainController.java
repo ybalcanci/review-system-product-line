@@ -3,6 +3,7 @@ package kernel.reviewsystemproductline.controller;
 import kernel.reviewsystemproductline.model.Hotel;
 import kernel.reviewsystemproductline.model.Movie;
 import kernel.reviewsystemproductline.model.Restaurant;
+import kernel.reviewsystemproductline.model.ReviewSystem;
 import kernel.reviewsystemproductline.repository.HotelRepository;
 import kernel.reviewsystemproductline.repository.MovieRepository;
 import kernel.reviewsystemproductline.repository.RestaurantRepository;

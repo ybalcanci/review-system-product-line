@@ -1,18 +1,35 @@
 package kernel.reviewsystemproductline.Explore;
+import kernel.reviewsystemproductline.Explore.Search.HotelSearch;
+import kernel.reviewsystemproductline.Explore.Search.MovieSearch;
+import kernel.reviewsystemproductline.Explore.Search.RestaurantSearch;
+import kernel.reviewsystemproductline.Explore.Search.SearchingSystem;
 import kernel.reviewsystemproductline.Helpers.*;
 import kernel.reviewsystemproductline.Explore.Recommendation.RecommendationSystem;
 
 import java.io.FileNotFoundException;
 
 public class Explore {
-
+	private String type;
     private boolean hasRecommendationSystem;
 
     private RecommendationSystem recommendationSys;
-    // private SearchAndFilterSystem searchAndFilterSys;  // TODO
+	private SearchingSystem searchingSystem;
 
 
-    public  Explore() {
+	public Explore(String type) {
+		this.type = type;
+
+		switch (type) {
+			case "hotel":
+				searchingSystem = new HotelSearch();
+				break;
+			case "movie":
+				searchingSystem = new MovieSearch();
+				break;
+			case "restaurant":
+				searchingSystem = new RestaurantSearch();
+				break;
+		}
 
         System.out.println("explore system is created");
 
