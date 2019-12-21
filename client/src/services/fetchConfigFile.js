@@ -5,7 +5,7 @@ const CONFIG_API_URL = "http://139.179.103.39:8080/";
 const fetchMovieSystemConfig = () =>
 {
 
-    let requestURL = `${CONFIG_API_URL}/movie`;
+    let requestURL = `${CONFIG_API_URL}/hotel`;
     
     return axios({
         method: 'get',
