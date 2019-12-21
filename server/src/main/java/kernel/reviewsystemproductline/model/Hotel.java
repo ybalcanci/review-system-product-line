@@ -18,6 +18,15 @@ public class Hotel extends ReviewedEntity {
 		super(name);
 	}
 
+	public Hotel(String name, String place, double hygieneRating, double price, String contactInfo, double parkingServiceRating) {
+		super(name);
+		this.place = place;
+		this.hygieneRating = hygieneRating;
+		this.price = price;
+		this.contactInfo = contactInfo;
+		this.parkingServiceRating = parkingServiceRating;
+	}
+
 	@Override
 	public String toString() {
 		return super.toString() +

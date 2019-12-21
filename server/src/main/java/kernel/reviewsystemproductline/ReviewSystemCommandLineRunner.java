@@ -1,6 +1,8 @@
 package kernel.reviewsystemproductline;
 
 import kernel.reviewsystemproductline.model.Hotel;
+import kernel.reviewsystemproductline.model.Movie;
+import kernel.reviewsystemproductline.model.Restaurant;
 import kernel.reviewsystemproductline.repository.HotelRepository;
 import kernel.reviewsystemproductline.repository.MovieRepository;
 import kernel.reviewsystemproductline.repository.RestaurantRepository;
@@ -27,6 +29,16 @@ public class ReviewSystemCommandLineRunner implements CommandLineRunner {
 		Stream.of("hotel 1", "hotel 2").forEach(name -> {
 			Hotel hotel = new Hotel(name);
 			hotelRepository.save(hotel);
+		});
+
+		Stream.of("movie 1", "movie 2").forEach(name -> {
+			Movie movie = new Movie(name);
+			movieRepository.save(movie);
+		});
+
+		Stream.of("restaurant 1", "restaurant 2").forEach(name -> {
+			Restaurant restaurant = new Restaurant(name);
+			restaurantRepository.save(restaurant);
 		});
 	}
 }
