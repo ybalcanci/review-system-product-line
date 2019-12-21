@@ -28,7 +28,8 @@ public class ReviewSystem {
 				//this.informationSystem = new Cast(new FAQ(new Trailer(new MovieInfo()))); // TODO Demo Case
 				break;
 			case "restaurant":
-				this.informationSystem = new RestaurantInfo();
+				//this.informationSystem = new RestaurantInfo(); // TODO Demo Case
+				this.informationSystem = new Contact(new RestaurantInfo());
 				break;
 		}
 
