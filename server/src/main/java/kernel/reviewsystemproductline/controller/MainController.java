@@ -31,21 +31,21 @@ public class MainController {
 			return hotelRepository.save(hotel);
 		}
 	*/
-	@GetMapping("/hotel_reviews")
+	@GetMapping("/hotel")
 	public ReviewSystemContext hotelReviewSystem() {
 		ReviewSystemContext reviewSystem = new ReviewSystem("hotel").getReviewSystemContext();
 		System.out.println(reviewSystem);
 		return reviewSystem;
 	}
 
-	@GetMapping("/movie_reviews")
+	@GetMapping("/movie")
 	public ReviewSystemContext movieReviewSystem() {
 		ReviewSystemContext reviewSystem = new ReviewSystem("movie").getReviewSystemContext();
 		System.out.println(reviewSystem);
 		return reviewSystem;
 	}
 
-	@GetMapping("/restaurant_reviews")
+	@GetMapping("/restaurant")
 	public ReviewSystemContext restaurantReviewSystem() {
 		ReviewSystemContext reviewSystem = new ReviewSystem("restaurant").getReviewSystemContext();
 		System.out.println(reviewSystem);
