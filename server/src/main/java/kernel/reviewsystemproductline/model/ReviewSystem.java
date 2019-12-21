@@ -53,7 +53,8 @@ public class ReviewSystem {
 				ratingSystem.getRatingFactory().isHasRateCastAndCrew(),
 				explore.getHasRecommendation() && explore.getRecommendationSys().getRecommendationFactory().isHasRestaurantRecommendation(),
 				explore.getHasRecommendation() && explore.getRecommendationSys().getRecommendationFactory().isHasTouristicRecommendation(),
-				explore.getHasRecommendation() && explore.getRecommendationSys().getRecommendationFactory().isHasThemeRecommendation()
+				explore.getHasRecommendation() && explore.getRecommendationSys().getRecommendationFactory().isHasThemeRecommendation(),
+				type
 		);
 	}
 

@@ -24,8 +24,15 @@ public class ReviewSystemContext implements Serializable {
 	private boolean hasRestaurantRecommendation;
 	private boolean hasTouristicRecommendation;
 	private boolean hasThemeRecommendation;
+	private String type;
 
-	public ReviewSystemContext(boolean hasAgeLimit, boolean hasRecommendationSystem, boolean hasRateActor, boolean hasRateDirector, boolean hasUploadImageFeature, boolean hasFAQ, boolean hasCast, boolean hasTrailer, boolean hasRoomPrice, boolean hasContact, boolean hasSearchByLocation, boolean hasSearchByCast, boolean hasSearchByFood, boolean hasRateParkingService, boolean hasRateAndSeeHygiene, boolean hasRateAndSeeDeliveryTime, boolean hasRateWaiters, boolean hasRateCastAndCrew, boolean hasRestaurantRecommendation, boolean hasTouristicRecommendation, boolean hasThemeRecommendation) {
+	public ReviewSystemContext(boolean hasAgeLimit, boolean hasRecommendationSystem, boolean hasRateActor,
+	                           boolean hasRateDirector, boolean hasUploadImageFeature, boolean hasFAQ, boolean hasCast,
+	                           boolean hasTrailer, boolean hasRoomPrice, boolean hasContact, boolean hasSearchByLocation,
+	                           boolean hasSearchByCast, boolean hasSearchByFood, boolean hasRateParkingService,
+	                           boolean hasRateAndSeeHygiene, boolean hasRateAndSeeDeliveryTime, boolean hasRateWaiters,
+	                           boolean hasRateCastAndCrew, boolean hasRestaurantRecommendation,
+	                           boolean hasTouristicRecommendation, boolean hasThemeRecommendation, String type) {
 		this.hasAgeLimit = hasAgeLimit;
 		this.hasRecommendationSystem = hasRecommendationSystem;
 		this.hasRateActor = hasRateActor;
@@ -47,6 +54,7 @@ public class ReviewSystemContext implements Serializable {
 		this.hasRestaurantRecommendation = hasRestaurantRecommendation;
 		this.hasTouristicRecommendation = hasTouristicRecommendation;
 		this.hasThemeRecommendation = hasThemeRecommendation;
+		this.type = type;
 	}
 
 	public boolean isHasAgeLimit() {
@@ -131,5 +139,9 @@ public class ReviewSystemContext implements Serializable {
 
 	public boolean isHasThemeRecommendation() {
 		return hasThemeRecommendation;
+	}
+
+	public String getType() {
+		return type;
 	}
 }
