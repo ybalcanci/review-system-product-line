@@ -1,5 +1,9 @@
 package kernel.reviewsystemproductline;
 
+import kernel.reviewsystemproductline.Explore.Search.RestaurantSearch;
+import kernel.reviewsystemproductline.Explore.Search.SearchByFood;
+import kernel.reviewsystemproductline.Explore.Search.SearchByLocation;
+import kernel.reviewsystemproductline.Explore.Search.SearchingSystem;
 import kernel.reviewsystemproductline.info.Contact;
 import kernel.reviewsystemproductline.info.FAQ;
 import kernel.reviewsystemproductline.info.InformationSystem;
@@ -35,9 +39,16 @@ public class ReviewSystemCommandLineRunner implements CommandLineRunner {
 		InformationSystem restaurantInfo = new Contact(new FAQ(new RestaurantInfo()));
 		System.out.println(restaurantInfo.getInfo());
 
+        SearchingSystem restaurantSearch = new SearchByFood(new SearchByLocation(new RestaurantSearch()));
+        System.out.println(restaurantSearch.search());
+        
 		Explore exploreSys = new Explore();
         System.out.println(exploreSys);
         //exploreSys.getRecommendationSys().getRecommendationFactory()
+
+
+		//Explore exploreSys = new Explore();
+
 		Stream.of("hotel 1", "hotel 2").forEach(name -> {
 			Hotel hotel = new Hotel(name);
 			hotelRepository.save(hotel);
