@@ -35,8 +35,9 @@ public class ReviewSystemCommandLineRunner implements CommandLineRunner {
 		InformationSystem restaurantInfo = new Contact(new FAQ(new RestaurantInfo()));
 		System.out.println(restaurantInfo.getInfo());
 
-		//Explore exploreSys = new Explore();
-
+		Explore exploreSys = new Explore();
+        System.out.println(exploreSys);
+        //exploreSys.getRecommendationSys().getRecommendationFactory()
 		Stream.of("hotel 1", "hotel 2").forEach(name -> {
 			Hotel hotel = new Hotel(name);
 			hotelRepository.save(hotel);

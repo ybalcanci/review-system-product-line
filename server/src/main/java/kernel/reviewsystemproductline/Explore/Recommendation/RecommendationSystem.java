@@ -12,4 +12,9 @@ public class RecommendationSystem {
         System.out.println("recommendation system is created");
     }
 
+    public RecommendationFactory getRecommendationFactory() {
+        return recommendationFactory;
+    }
+
+
 }

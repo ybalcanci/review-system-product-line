@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 public class Explore {
 
     private boolean hasRecommendationSystem;
+
     private RecommendationSystem recommendationSys;
     // private SearchAndFilterSystem searchAndFilterSys;  // TODO
 
@@ -27,5 +28,21 @@ public class Explore {
         if (hasRecommendationSystem) {
             recommendationSys = new RecommendationSystem();
         }
+    }
+    public boolean getHasRecommendation(){
+        return hasRecommendationSystem;
+    }
+
+    public RecommendationSystem getRecommendationSys() {
+        return recommendationSys;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Explore{" +
+                "hasRecommendationSystem=" + hasRecommendationSystem +
+                ", recommendationSys=" + recommendationSys.getRecommendationFactory() +
+                '}';
     }
 }
