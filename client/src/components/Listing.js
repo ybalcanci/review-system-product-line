@@ -44,9 +44,12 @@ const useStyles = makeStyles(theme => ({
       backgroundColor:
         theme.palette.type === 'dark' ? theme.palette.grey[700] : theme.palette.grey[200],
     },
+    card: {
+      maxWidth: 345,
+    },
     cardPricing: {
       display: 'flex',
-      justifyContent: 'center',
+      justifyContent: 'left',
       alignItems: 'baseline',
       marginBottom: theme.spacing(2),
     },
@@ -64,22 +67,22 @@ const useStyles = makeStyles(theme => ({
   
 const tiers = [
 {
-    title: 'Anan',
+    title: 'Hotel 1',
     path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS78aY9cQ2xD09zNdGL4ekYGHjLELKukyFaNRaH0wnHzCHF1U33',
-    buttonText: 'Sign up for free',
     buttonVariant: 'contained',
+    explanation: 'Anan anan anan',
 },
 {
-    title: 'Restaurant Review',
-    path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEzFMbXyfPLTI_4YA2JCY71W_G-0Zfo7_ENAfnR3P4a6vMF39a',
-    buttonText: 'Get started',
+    title: 'Hotel 2',
+    path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTWMTKBph4g3sCBqyDlWa68iLUGdKjylvGp41d0PBnB4YGerToj',
     buttonVariant: 'contained',
+    explanation: 'ana',
 },
 {
-    title: 'Movie Review',
-    path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRQk-CnIRaVuro_ji6wCxX09yhVbRfTO_IMM0EQjw24VODGE9n3',
-    buttonText: 'Contact us',
+    title: 'Hotel 3',
+    path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVSIKBxT9BJdF8qdi9lzIPIljK-OZidwm6rpBXPk6JR_jH6upZ',
     buttonVariant: 'contained',
+    explanation: 'baba',
 },
 ];
 export default function Pricing() {
@@ -91,31 +94,34 @@ export default function Pricing() {
         {/* Hero unit */}
         <Container maxWidth="sm" component="main" className={classes.heroContent}>
           <Typography component="h1" variant="h2" align="center" gutterBottom>
-            Review System
+            Hotel Review System
           </Typography>
         </Container>
         {/* End hero unit */}
         <Container maxWidth="md" component="main">
-          <Grid container spacing={5} alignItems="flex-end">
+          <Grid container spacing={10} alignItems="flex-end">
             {tiers.map(tier => (
               // Enterprise card is full width at sm breakpoint
-              <Grid item key={tier.title} xs={12} sm={tier.title === 'Restaurant Review' ? 12 : 6} md={5}>
+              <Grid item key={tier.title} xs={12} sm={tier.title === 'Restaurant Review' ? 12 : 6} md={10}>
                 <Card>
                   <CardHeader
                     title={tier.title}
-                    titleTypographyProps={{ align: 'center' }}
-                    subheaderTypographyProps={{ align: 'center' }}
+                    titleTypographyProps={{ align: 'left' }}
+                    subheaderTypographyProps={{ align: 'left' }}
                     action={tier.title === 'Pro' ? <StarIcon /> : null}
                     className={classes.cardHeader}
                   />
                   <CardContent>
                     <ul>
                         <img src={tier.path} width="193" height="130"></img>
+                        <Typography variant="h5" align="center" color="textSecondary" component="p">
+                          {tier.explanation}
+                        </Typography>
                     </ul>
                   </CardContent>
                   <CardActions>
                     <Button fullWidth variant={tier.buttonVariant} color="primary">
-                      {tier.buttonText}
+                      Learn More
                     </Button>
                   </CardActions>
                 </Card>

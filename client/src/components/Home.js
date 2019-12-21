@@ -116,7 +116,7 @@ export default function Pricing() {
                   </CardContent>
                   <CardActions>
                     
-                    <Button to="/listing" renderAs={Link} fullWidth variant={tier.buttonVariant} color="primary" >
+                    <Button href="/listing"  fullWidth variant={tier.buttonVariant} color="primary" >
                         {tier.buttonText}
                     </Button>
                  
