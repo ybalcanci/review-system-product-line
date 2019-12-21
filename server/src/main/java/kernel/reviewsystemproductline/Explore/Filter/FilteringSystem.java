@@ -23,7 +23,10 @@ public class FilteringSystem {
             e.printStackTrace();
         }
         if (hasAgeLimit) {
+            if (!(type.equals("hotel") || type.equals("movie")))
+                hasAgeLimit = false;
             ageLim = new AgeLimitation();
+
         }
     }
 
