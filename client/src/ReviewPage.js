@@ -17,19 +17,48 @@ class ReviewPage extends Component {
             newValue: 0,
             hasCast: false,
             hasTrailer: false,
-            type: "",
+            type: "movie",
             hasRateActor: false,
-            hasRateDirector: false
+            hasRateDirector: false,
+            isReviewSectionVisible: false
         }
     }
     setValue = (event, newValue) => {
         this.setState({ newValue: newValue })
     };
+
+    showOrHideReviewSection = () => {
+        this.setState(oldState => ({ isReviewSectionVisible: !oldState.isReviewSectionVisible }))
+    };
+
     componentDidMount() {
         fetchMovieSystemConfig.fetchMovieSystemConfig()
             .then(response => {
                 console.log(response)
-                this.setState({ hasCast: response.hasCast, hasTrailer: response.hasTrailer, type: response.type, hasRateActor: response.hasRateActor, hasRateDirector: response.hasRateDirector })
+                this.setState({
+                    hasAgeLimit: response.hasAgeLimit,
+                    hasRecommendationSystem: response.hasRecommendationSystem,
+                    hasRateActor: response.hasRateActor,
+                    hasRateDirector: response.hasRateDirector,
+                    hasUploadImage: response.hasUploadImage,
+                    hasFAQ: response.hasFAQ,
+                    hasCast: response.hasCast,
+                    hasTrailer: response.hasTrailer,
+                    hasRoomPrice: response.hasRoomPrice,
+                    hasContact: response.hasContact,
+                    hasSearchByLocation: response.hasSearchByLocation,
+                    hasSearchByCast: response.hasSearchByCast,
+                    hasSearchByFood: response.hasSearchByFood,
+                    hasRateParkingService: response.hasRateParkingService,
+                    hasRateAndSeeHygiene: response.hasRateAndSeeHygiene,
+                    hasRateAndSeeDeliveryTime: response.hasRateAndSeeDeliveryTime,
+                    hasRateWaiters: response.hasRateWaiters,
+                    hasRateCastAndCrew: response.hasRateCastAndCrew,
+                    hasRestaurantRecommendation: response.hasRestaurantRecommendation,
+                    hasTouristicRecommendation: response.hasTouristicRecommendation,
+                    hasThemeRecommendation: response.hasThemeRecommendation,
+                    type: response.type,
+                })
                 // console.log(this.hasCastInfo)
                 // console.log(this.hasTrailer)
             })
@@ -41,79 +70,59 @@ class ReviewPage extends Component {
         console.log(this.state.type + "ss")
         return (
             <div style={styles.mainContainer}>
+                <div style={styles.infoContainer}>
 
-                <Entity entityName='Lord of the Rings' director='Peter Jackson' year='2001' hasTrailer={this.state.hasTrailer} hasCastInfo={this.state.hasCast} type='movie' />
-                <Typography gutterBottom variant="h5" component="h1">
-                    Reviews:
-            </Typography>
-                <Card>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            WORST MOVIE OFF ALL TIMES
-                    </Typography>
-                        <Typography gutterBottom variant="body2" component="p">
-                            <Link href="#" variant="body2">
-                                Mr.Siksuyu
-                        </Link>
-                            {" "} 22nd May
-                    </Typography>
-                        <Typography variant="body2" component="p">
-                            Peter Jackson managed to ruin the best books of all time. The cast is terrible. Story telling is terrible. What a waste of 2+ hours
-                    <br />
-                            a benevolent smile
-                    </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small">Read More</Button>
-                    </CardActions>
-                </Card>
+                    <Entity
+                        hasAgeLimit={this.state.hasAgeLimit}
+                        hasRecommendationSystem={this.state.hasRecommendationSystem}
+                        hasRateActor={this.state.hasRateActor}
+                        hasRateDirector={this.state.hasRateDirector}
+                        hasUploadImage={this.state.hasUploadImage}
+                        hasFAQ={this.state.hasFAQ}
+                        hasCast={this.state.hasCast}
+                        hasTrailer={this.state.hasTrailer}
+                        hasRoomPrice={this.state.hasRoomPrice}
+                        hasContact={this.state.hasContact}
+                        hasSearchByLocation={this.state.hasSearchByLocation}
+                        hasSearchByCast={this.state.hasSearchByCast}
+                        hasSearchByFood={this.state.hasSearchByFood}
+                        hasRateParkingService={this.state.hasRateParkingService}
+                        hasRateAndSeeHygiene={this.state.hasRateAndSeeHygiene}
+                        hasRateAndSeeDeliveryTime={this.state.hasRateAndSeeDeliveryTime}
+                        hasRateWaiters={this.state.hasRateWaiters}
+                        hasRateCastAndCrew={this.state.hasRateCastAndCrew}
+                        hasRestaurantRecommendation={this.state.hasRestaurantRecommendation}
+                        hasTouristicRecommendation={this.state.hasTouristicRecommendation}
+                        hasThemeRecommendation={this.state.hasThemeRecommendation}
+                        type={this.state.type}
+                        entityName='Lord of the Rings'
+                        director='Peter Jackson'
+                        year='2001'
+                    />
 
-                <Card>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            An absolutely incredible film!
+                </div>
+                <div style={styles.reviewsContainer}>
+                    <Typography gutterBottom variant="h5" component="h1">
+                        Reviews:
                     </Typography>
-                        <Typography gutterBottom variant="body2" component="p">
-                            <Link href="#" variant="body2">
-                                Mr.Siksuyu
-                        </Link>
-                            {" "} 22nd May
-                    </Typography>
-                        <Typography variant="body2" component="p">
-                            Simply incredible. Never before have I seen a 3 hour movie that didn't seem like 3 hours. I read the Lord of the Rings very recently and I was surprised at how similar Peter Jackson's vision was to my own.
+                    <Review />
                     <br />
-                            a benevolent smile
-                    </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small">Read More</Button>
-                    </CardActions>
-                </Card>
-
-                <Card>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            The Fellowship of the Ring: Not just a Movie, but the Door to another Dimension
-                    </Typography>
-                        <Typography gutterBottom variant="body2" component="p">
-                            <Link href="#" variant="body2">
-                                Mr.Siksuyu
-                        </Link>
-                            {" "} 22nd May
-                    </Typography>
-                        <Typography variant="body2" component="p">
-                            The first part of the Lord of the Rings trilogy, the Fellowship of the Rings opened the door to a whole new world for me. I'd never read any of Tolkien's books when I saw the film for the first time at the theatre and, now that I've read them, in retrospect I think being a neophyte to the mythology made my LOTR movie experience all the more miraculous.
-                    <br />
-                            a benevolent smile
-                    </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small">Read More</Button>
-                    </CardActions>
-                </Card>
-                <br />
-                <RatingSystem hasRateActor={this.state.hasRateActor} hasRateDirector={this.state.hasRateDirector} type='movie' />
-                <Review />
+                    {
+                        !this.state.isReviewSectionVisible &&
+                        (
+                            <Button size="small" onClick={this.showOrHideReviewSection}>Send a Review</Button>
+                        )
+                    }
+                    {
+                        this.state.isReviewSectionVisible &&
+                        (
+                            <div>
+                                <Button size="small" onClick={this.showOrHideReviewSection}>Hide Review Section</Button>
+                                <RatingSystem hasRateActor={this.state.hasRateActor} hasRateDirector={this.state.hasRateDirector} type='movie' />
+                            </div>
+                        )
+                    }
+                </div>
             </div>
         );
     }
@@ -121,10 +130,18 @@ class ReviewPage extends Component {
 
 const styles = {
     mainContainer: {
+        display: 'block',
         marginLeft: 40,
         marginBottom: 20,
         marginTop: 40
     },
+    infoContainer: {
+        position: 'absolute'
+    },
+    reviewsContainer: {
+        float: 'right',
+        display: 'inline'
+    }
 };
 
 export default ReviewPage;
