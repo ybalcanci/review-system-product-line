@@ -64,15 +64,15 @@ class Entity extends Component {
     else if (this.props.type === "restaurant") {
       return (
         <div>
-          {this.props['hasTrailer'] &&
+          {this.props['hasContact'] &&
             <Button size="small" color="primary">
-              Watch Trailer
+              Contact
         </Button>
           }
 
-          {this.props['hasCast'] &&
+          {this.props['hasRateWaiters'] &&
             <Button size="small" color="primary">
-              Show Cast Info
+              Rate Waiters
         </Button>
           }
         </div>
@@ -133,6 +133,34 @@ class Entity extends Component {
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 Star: 5 star hotel
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            {this.renderButtons()}
+          </CardActions>
+        </Card>
+      );
+
+    }
+    else if (this.props.type === 'restaurant') {
+      return (
+        <Card className={classes.card}>
+          <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image='http://www.vipsektor.com/FirmaResimleri/20945_web_b4d578edd9c3e375d3b5ee3a0edb5bd6.jpg'
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Gülçimen Aspava
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                Address: Emek, Ankara
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                Star: 4
               </Typography>
             </CardContent>
           </CardActionArea>

@@ -2,10 +2,10 @@ import axios from 'axios';
 
 const CONFIG_API_URL = "http://139.179.103.39:8080/";
 
-const fetchMovieSystemConfig = () =>
+const fetchMovieSystemConfig = (type) =>
 {
 
-    let requestURL = `${CONFIG_API_URL}/hotel`;
+    let requestURL = `${CONFIG_API_URL}/${type}`;
     
     return axios({
         method: 'get',

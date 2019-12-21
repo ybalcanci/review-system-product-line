@@ -32,7 +32,8 @@ class ReviewPage extends Component {
     };
 
     componentDidMount() {
-        fetchMovieSystemConfig.fetchMovieSystemConfig()
+        //fetchMovieSystemConfig.fetchMovieSystemConfig(this.props.type)
+        fetchMovieSystemConfig.fetchMovieSystemConfig("restaurant")
             .then(response => {
                 console.log(response)
                 this.setState({
