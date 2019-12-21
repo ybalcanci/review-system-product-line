@@ -9,6 +9,7 @@ import Entity from './components/Entity.js'
 import RatingSystem from './components/RatingSystem.js'
 import Review from './components/Review.js'
 import fetchMovieSystemConfig from './services/fetchConfigFile'
+import Recommendation from './components/Recommendation.js';
 
 class ReviewPage extends Component {
     constructor(props) {
@@ -92,6 +93,7 @@ class ReviewPage extends Component {
                         director='Peter Jackson'
                         year='2001'
                     />
+                    <Recommendation hasThemeRecommendation={this.state.hasThemeRecommendation} type='movie'/>
 
                 </div>
                 <div style={styles.reviewsContainer}>
