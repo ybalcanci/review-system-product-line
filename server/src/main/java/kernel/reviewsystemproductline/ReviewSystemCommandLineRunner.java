@@ -11,6 +11,7 @@ import kernel.reviewsystemproductline.info.RestaurantInfo;
 import kernel.reviewsystemproductline.model.Hotel;
 import kernel.reviewsystemproductline.model.Movie;
 import kernel.reviewsystemproductline.model.Restaurant;
+import kernel.reviewsystemproductline.model.ReviewSystem;
 import kernel.reviewsystemproductline.repository.HotelRepository;
 import kernel.reviewsystemproductline.repository.MovieRepository;
 import kernel.reviewsystemproductline.repository.RestaurantRepository;
@@ -45,6 +46,9 @@ public class ReviewSystemCommandLineRunner implements CommandLineRunner {
 		Explore exploreSys = new Explore("hotel");
         System.out.println(exploreSys);
         //exploreSys.getRecommendationSys().getRecommendationFactory()
+
+		ReviewSystem revSys = new ReviewSystem("hotel");
+		System.out.println(revSys.getRatingSystem());
 
 
 		//Explore exploreSys = new Explore();
