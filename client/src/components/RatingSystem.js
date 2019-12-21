@@ -25,7 +25,7 @@ class RatingSystem extends Component {
             return(
                 <div>
                     <Box component="fieldset" mb={3} borderColor="transparent">
-                        <Typography component="legend">Rate Cast and Crew:</Typography>
+                        <Typography component="legend">Rate Actor:</Typography>
                         <Rating
                             name="simple-controlled"
                             value={this.state.newValue}
@@ -86,7 +86,65 @@ class RatingSystem extends Component {
         
         else if(this.props['type'] === 'hotel')
         {
-            return;
+            if(this.props['hasRateParkingService'] && this.props['hasRateAndSeeHygiene'] )
+            {
+                return(
+                    <div>
+                        <Box component="fieldset" mb={3} borderColor="transparent">
+                            <Typography component="legend">Rate Parking Service</Typography>
+                            <Rating
+                                name="simple-controlled"
+                                value={this.state.newValue}
+                                onChange={this.setValue}
+                        />
+                        </Box>
+                        <Box component="fieldset" mb={3} borderColor="transparent">
+                            <Typography component="legend"> Rate and See Hygiene</Typography>
+                            <Rating
+                                name="simple-controlled"
+                                value={this.state.newValue}
+                                onChange={this.setValue}
+                        />
+                        </Box>
+                    </div>
+    
+                );
+            }
+            else if(!this.props['hasRateParkingService'] && this.props['hasRateAndSeeHygiene'] )
+            {
+                return(
+                    <div>
+                        <Box component="fieldset" mb={3} borderColor="transparent">
+                            <Typography component="legend"> Rate and See Hygiene</Typography>
+                            <Rating
+                                name="simple-controlled"
+                                value={this.state.newValue}
+                                onChange={this.setValue}
+                        />
+                        </Box>
+                    </div>
+                );
+            }
+            else if(this.props['hasRateParkingService'] && !this.props['hasRateAndSeeHygiene'] )
+            {
+                return(
+                    <div>
+                        <Box component="fieldset" mb={3} borderColor="transparent">
+                            <Typography component="legend">Rate Parking Service</Typography>
+                            <Rating
+                                name="simple-controlled"
+                                value={this.state.newValue}
+                                onChange={this.setValue}
+                        />
+                        </Box>
+                    </div>
+    
+                );
+            }
+            else
+            {
+                return;
+            }
         }
         else
         {
