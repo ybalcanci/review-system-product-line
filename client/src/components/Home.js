@@ -67,19 +67,22 @@ const tiers = [
 {
     title: 'Hotel Review',
     path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS78aY9cQ2xD09zNdGL4ekYGHjLELKukyFaNRaH0wnHzCHF1U33',
-    buttonText: 'Sign up for free',
+    buttonText: 'Go to Hotel Search',
+    buttonPath: '/listingHotel',
     buttonVariant: 'contained',
 },
 {
     title: 'Restaurant Review',
     path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEzFMbXyfPLTI_4YA2JCY71W_G-0Zfo7_ENAfnR3P4a6vMF39a',
-    buttonText: 'Get started',
+    buttonText: 'Go to Restaurant Search',
+    buttonPath: '/listingRestaurant',
     buttonVariant: 'contained',
 },
 {
     title: 'Movie Review',
     path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRQk-CnIRaVuro_ji6wCxX09yhVbRfTO_IMM0EQjw24VODGE9n3',
-    buttonText: 'Contact us',
+    buttonText: 'Go to Movie Search',
+    buttonPath: '/listingMovie',
     buttonVariant: 'contained',
 },
 ];
@@ -116,7 +119,7 @@ export default function Pricing() {
                   </CardContent>
                   <CardActions>
                     
-                    <Button href="/listing"  fullWidth variant={tier.buttonVariant} color="primary" >
+                    <Button href={tier.buttonPath}  fullWidth variant={tier.buttonVariant} color="primary" >
                         {tier.buttonText}
                     </Button>
                  
