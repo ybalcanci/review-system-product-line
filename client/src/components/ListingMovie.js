@@ -240,7 +240,7 @@ class ListingMovie extends Component {
                   </CardContent>
                   <CardActions>
                     <Button onClick={this.handleClick} fullWidth variant={tier.buttonVariant} color="primary">
-                      Learn More
+                      Read Reviews
                     </Button>
                   </CardActions>
                 </Card>
