@@ -10,6 +10,7 @@ import RatingSystem from './components/RatingSystem.js'
 import Review from './components/Review.js'
 import fetchMovieSystemConfig from './services/fetchConfigFile'
 import Recommendation from './components/Recommendation.js';
+import Grid from '@material-ui/core/Grid';
 
 class ReviewPage extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class ReviewPage extends Component {
             newValue: 0,
             hasCast: false,
             hasTrailer: false,
-            type: "movie",
+            type: "hotel",
             hasRateActor: false,
             hasRateDirector: false,
             isReviewSectionVisible: false
@@ -34,7 +35,7 @@ class ReviewPage extends Component {
 
     componentWillMount() {
         //fetchMovieSystemConfig.fetchMovieSystemConfig(this.props.type)
-        fetchMovieSystemConfig.fetchMovieSystemConfig("movie")
+        fetchMovieSystemConfig.fetchMovieSystemConfig("hotel")
             .then(response => {
                 console.log(response)
                 this.setState({
@@ -73,7 +74,8 @@ class ReviewPage extends Component {
         return (
             <div style={styles.mainContainer}>
                 <div style={styles.infoContainer}>
-
+                <Grid container spacing={1}>
+                    <Grid item xs={4} spacing={3}>
                     <Entity
                         hasAgeLimit={this.state.hasAgeLimit}
                         hasRecommendationSystem={this.state.hasRecommendationSystem}
@@ -94,9 +96,9 @@ class ReviewPage extends Component {
                         year='2001'
                     />
                     <Recommendation hasThemeRecommendation={this.state.hasThemeRecommendation} type='movie'/>
-
-                </div>
-                <div style={styles.reviewsContainer}>
+                    </Grid>
+                
+                    <Grid item xs={8} spacing={3}>
                     <Typography gutterBottom variant="h5" component="h1">
                         Reviews:
                     </Typography>
@@ -127,6 +129,8 @@ class ReviewPage extends Component {
                             </div>
                         )
                     }
+                    </Grid>
+                </Grid>
                 </div>
             </div>
         );
@@ -144,8 +148,9 @@ const styles = {
         position: 'absolute'
     },
     reviewsContainer: {
-        float: 'right',
-        display: 'inline'
+        float: 'left',
+        display: 'inline',
+        marginLeft: 350
     }
 };
 
