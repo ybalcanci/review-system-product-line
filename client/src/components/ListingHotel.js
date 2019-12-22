@@ -1,4 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -33,6 +34,7 @@ class ListingHotel extends Component {
           hasAgeLimit: false,
           hasRecommendationSystem: false,
           hasRateActor: false,
+          redirect: false,
           hasRateDirector: false,
           hasUploadImage: false,
           hasFAQ: false,
@@ -106,19 +108,19 @@ class ListingHotel extends Component {
               title: 'Hotel 1',
               path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS78aY9cQ2xD09zNdGL4ekYGHjLELKukyFaNRaH0wnHzCHF1U33',
               buttonVariant: 'contained',
-              explanation: 'Anan anan anan',
+              explanation: 'Sheraton Hotel',
           },
           {
               title: 'Hotel 2',
               path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTWMTKBph4g3sCBqyDlWa68iLUGdKjylvGp41d0PBnB4YGerToj',
               buttonVariant: 'contained',
-              explanation: 'ana',
+              explanation: 'ibis Hotel',
           },
           {
               title: 'Hotel 3',
               path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVSIKBxT9BJdF8qdi9lzIPIljK-OZidwm6rpBXPk6JR_jH6upZ',
               buttonVariant: 'contained',
-              explanation: 'baba',
+              explanation: 'Rixos Hotel',
           },
           ],   
       }
@@ -131,7 +133,11 @@ class ListingHotel extends Component {
      // console.log(this.hasCastInfo)
      // console.log(this.hasTrailer)
     });*/
-    
+    handleClick = () => {
+      this.setState({
+        redirect: true
+      })
+    }
     componentDidMount() {
       fetchSystemConfig.fetchSystemConfig("hotel")
           .then(response => {
@@ -169,7 +175,13 @@ class ListingHotel extends Component {
 
     render() {
       console.log(this.state.hasSearchByCast);
+      if (this.state.redirect) {
+        this.props.history.push('/reviewPage', {
+          type: this.state.type
+        })
+      }
       return(
+      
       <React.Fragment>
         <CssBaseline />
         {/* Hero unit */}
@@ -229,7 +241,7 @@ class ListingHotel extends Component {
                     </ul>
                   </CardContent>
                   <CardActions>
-                    <Button href="/reviewPage" fullWidth variant={tier.buttonVariant} color="primary">
+                    <Button onClick={this.handleClick} fullWidth variant={tier.buttonVariant} color="primary">
                       Learn More
                     </Button>
                   </CardActions>

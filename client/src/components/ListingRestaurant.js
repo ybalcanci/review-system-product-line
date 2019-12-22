@@ -31,6 +31,7 @@ class ListingRestaurant extends Component {
           hasAgeLimit: false,
           hasRecommendationSystem: false,
           hasRateActor: false,
+          redirect: false,
           hasRateDirector: false,
           hasUploadImage: false,
           hasFAQ: false,
@@ -102,21 +103,21 @@ class ListingRestaurant extends Component {
         tiers : [
           {
               title: 'Restaurant 1',
-              path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS78aY9cQ2xD09zNdGL4ekYGHjLELKukyFaNRaH0wnHzCHF1U33',
+              path: 'http://www.vipsektor.com/FirmaResimleri/20945_web_b4d578edd9c3e375d3b5ee3a0edb5bd6.jpg',
               buttonVariant: 'contained',
-              explanation: 'Anan anan anan',
+              explanation: 'Gulcimen Aspava',
           },
           {
               title: 'Restaurant 2',
-              path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTWMTKBph4g3sCBqyDlWa68iLUGdKjylvGp41d0PBnB4YGerToj',
+              path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReV3U7rGwtwNs8khSc1SA-vH_O5fTFG5p4FpwtLQuHeHTUPOVe',
               buttonVariant: 'contained',
-              explanation: 'ana',
+              explanation: 'Nobu Restaurant',
           },
           {
               title: 'Restaurant 3',
-              path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVSIKBxT9BJdF8qdi9lzIPIljK-OZidwm6rpBXPk6JR_jH6upZ',
+              path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcgSZeyBR_BRp8KSNNM6iz5auX8qynnCjUNvQzFhZa5b4grwpv',
               buttonVariant: 'contained',
-              explanation: 'baba',
+              explanation: 'Çukurağa Restaurant',
           },
           ],   
       }
@@ -129,7 +130,11 @@ class ListingRestaurant extends Component {
      // console.log(this.hasCastInfo)
      // console.log(this.hasTrailer)
     });*/
-    
+    handleClick = () => {
+      this.setState({
+        redirect: true
+      })
+    }
     componentDidMount() {
       fetchSystemConfig.fetchSystemConfig("restaurant")
           .then(response => {
@@ -166,7 +171,11 @@ class ListingRestaurant extends Component {
   }
 
     render() {
-      console.log(this.state.hasSearchByCast);
+      if (this.state.redirect) {
+        this.props.history.push('/reviewPage', {
+          type: this.state.type
+        })
+      }
       return(
       <React.Fragment>
         <CssBaseline />
@@ -227,7 +236,7 @@ class ListingRestaurant extends Component {
                     </ul>
                   </CardContent>
                   <CardActions>
-                    <Button href="/reviewPage" fullWidth variant={tier.buttonVariant} color="primary">
+                    <Button onClick={this.handleClick} fullWidth variant={tier.buttonVariant} color="primary">
                       Learn More
                     </Button>
                   </CardActions>

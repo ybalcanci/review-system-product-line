@@ -18,11 +18,12 @@ class ReviewPage extends Component {
             newValue: 0,
             hasCast: false,
             hasTrailer: false,
-            type: "hotel",
+            type: this.props.location.state.type,
             hasRateActor: false,
             hasRateDirector: false,
             isReviewSectionVisible: false
         }
+        console.log(this.props.location.state)
     }
     setValue = (event, newValue) => {
         this.setState({ newValue: newValue })
@@ -34,7 +35,7 @@ class ReviewPage extends Component {
 
     componentWillMount() {
         //fetchMovieSystemConfig.fetchMovieSystemConfig(this.props.type)
-        fetchSystemConfig.fetchSystemConfig("movie")
+        fetchSystemConfig.fetchSystemConfig(this.state.type)
             .then(response => {
                 console.log(response)
                 this.setState({
@@ -93,7 +94,7 @@ class ReviewPage extends Component {
                         director='Peter Jackson'
                         year='2001'
                     />
-                    <Recommendation hasThemeRecommendation={this.state.hasThemeRecommendation} type='movie'/>
+                    <Recommendation hasThemeRecommendation={this.state.hasThemeRecommendation} type={this.state.type}/>
 
                 </div>
                 <div style={styles.reviewsContainer}>
@@ -144,8 +145,9 @@ const styles = {
         position: 'absolute'
     },
     reviewsContainer: {
-        float: 'right',
-        display: 'inline'
+        float: 'left',
+        display: 'inline',
+        marginLeft: 450
     }
 };
 

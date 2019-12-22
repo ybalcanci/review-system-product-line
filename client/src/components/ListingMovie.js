@@ -33,6 +33,7 @@ class ListingMovie extends Component {
           hasAgeLimit: false,
           hasRecommendationSystem: false,
           hasRateActor: false,
+          redirect: false,
           hasRateDirector: false,
           hasUploadImage: false,
           hasFAQ: false,
@@ -104,21 +105,21 @@ class ListingMovie extends Component {
         tiers : [
           {
               title: 'Movie 1',
-              path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS78aY9cQ2xD09zNdGL4ekYGHjLELKukyFaNRaH0wnHzCHF1U33',
+              path: 'https://vignette.wikia.nocookie.net/lotr/images/d/df/Fellowship1.jpg/revision/latest?cb=20190711180551',
               buttonVariant: 'contained',
-              explanation: 'Anan anan anan',
+              explanation: 'LOTR',
           },
           {
               title: 'Movie 2',
-              path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTWMTKBph4g3sCBqyDlWa68iLUGdKjylvGp41d0PBnB4YGerToj',
+              path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQ1-zewVfU1h9NaDk6GMepOBsEuXD-qVytYWpX-U1HX00QjOHN',
               buttonVariant: 'contained',
-              explanation: 'ana',
+              explanation: 'Harry Potter',
           },
           {
               title: 'Movie 3',
-              path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRVSIKBxT9BJdF8qdi9lzIPIljK-OZidwm6rpBXPk6JR_jH6upZ',
+              path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQU_v0I7wBnYhDIYbr6mNepsqqM8hPUgdpGBG0l_GCqMIe0zuSi',
               buttonVariant: 'contained',
-              explanation: 'baba',
+              explanation: 'Hunger Games',
           },
           ],   
       }
@@ -131,7 +132,11 @@ class ListingMovie extends Component {
      // console.log(this.hasCastInfo)
      // console.log(this.hasTrailer)
     });*/
-    
+    handleClick = () => {
+      this.setState({
+        redirect: true
+      })
+    }
     componentDidMount() {
       fetchSystemConfig.fetchSystemConfig("movie")
           .then(response => {
@@ -168,6 +173,11 @@ class ListingMovie extends Component {
   }
 
     render() {
+      if (this.state.redirect) {
+        this.props.history.push('/reviewPage', {
+          type: this.state.type
+        })
+      }
       console.log(this.state.hasSearchByCast);
       return(
       <React.Fragment>
@@ -229,7 +239,7 @@ class ListingMovie extends Component {
                     </ul>
                   </CardContent>
                   <CardActions>
-                    <Button href="/reviewPage" fullWidth variant={tier.buttonVariant} color="primary">
+                    <Button onClick={this.handleClick} fullWidth variant={tier.buttonVariant} color="primary">
                       Learn More
                     </Button>
                   </CardActions>
