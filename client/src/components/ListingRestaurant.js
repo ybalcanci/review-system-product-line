@@ -243,6 +243,41 @@ class ListingRestaurant extends Component {
                 </Card>
               </Grid>
             ))}
+            {this.state.hasFAQ && <div>
+              <Typography component="h3" variant="h5" align="center" gutterBottom>
+                FAQ
+              </Typography>
+              <ul>
+                <li>Do not add content that obviously fits other sections of IMDb. We do not want to replicate information that can easily fit in one of our pre-existing categories. "Hard" data like cast/crew information is stored elsewhere.</li>
+                <li>Please do not include profanities, obscenities or extreme views in your FAQ.</li>
+                <li>Where possible we want to keep as much valid information as possible to inform. If the data is factually incorrect then please report the item to our data editors. Do not report an item if you simply don't agree it should be included but is factually correct.</li>
+                <li>If you notice bad data on the site, help us by correcting the data. But please remember, different people have different views.  We understand not everyone will agree on what should be added to an FAQ.  What constitutes a valid piece of information is at the discretion of our editors.</li>
+                <li>If you wish to present another opinion on an FAQ please edit the answer to include your opinion by adding a second section below the previous answer - do not delete the original answer simple because you come from another standpoint.</li>
+                <li>Read previous postings before entering a new one: You might find that your question has already been answered.</li>
+                <li>Always write in English, regardless of the language of the original film.</li>
+                <li>Always write in a sentence case (i.e. don't capitalize every word.)</li>
+                <li>Always do a spell check.</li>
+                <li>Always use the Spoiler checkbox if submitting an FAQ that includes spoilers.</li>
+                <li>Do not use block capitals.</li>
+                <li>Do not use short-hand 'text speak'.</li>
+                <li>Do not include external URLs – linking to a title or name page on IMDb is acceptable.</li>
+                <li>Do not use mark up (e.g. [b] etc.) as this is no longer supported on the site.</li>
+              </ul>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              </div>}
           </Grid>
         </Container>
       </React.Fragment>);
