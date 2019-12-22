@@ -145,13 +145,13 @@ class Entity extends Component {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                Şerıtın Hotel
+                Sheraton Hotel
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Hotel name: Şerıtın
+                Hotel name: Sheraton
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Address: Isengard mahallesi / MIDDLE EARTH
+                Address: Palo Alto - Silicon Valley - CA
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 Star: 5 star hotel

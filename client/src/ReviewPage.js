@@ -76,7 +76,7 @@ class ReviewPage extends Component {
             <div style={styles.mainContainer}>
                 <div style={styles.infoContainer}>
                 <Grid container spacing={1}>
-                    <Grid item xs={4} spacing={3}>
+                    <Grid item xs={3} spacing={3}>
                     <Entity
                         hasAgeLimit={this.state.hasAgeLimit}
                         hasRecommendationSystem={this.state.hasRecommendationSystem}
@@ -99,11 +99,11 @@ class ReviewPage extends Component {
                     <Recommendation hasThemeRecommendation={this.state.hasThemeRecommendation} type='movie'/>
                     </Grid>
                 
-                    <Grid item xs={8} spacing={3}>
+                    <Grid item xs={9} spacing={3}>
                     <Typography gutterBottom variant="h5" component="h1">
                         Reviews:
                     </Typography>
-                    <Review />
+                    <Review type={this.state.type} />
                     <br />
                     {
                         !this.state.isReviewSectionVisible &&
