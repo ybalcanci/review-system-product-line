@@ -8,7 +8,7 @@ import Link from '@material-ui/core/Link';
 import Entity from './components/Entity.js'
 import RatingSystem from './components/RatingSystem.js'
 import Review from './components/Review.js'
-import fetchMovieSystemConfig from './services/fetchConfigFile'
+import fetchSystemConfig from './services/fetchConfigFile'
 import Recommendation from './components/Recommendation.js';
 
 class ReviewPage extends Component {
@@ -18,7 +18,7 @@ class ReviewPage extends Component {
             newValue: 0,
             hasCast: false,
             hasTrailer: false,
-            type: "movie",
+            type: "hotel",
             hasRateActor: false,
             hasRateDirector: false,
             isReviewSectionVisible: false
@@ -34,7 +34,7 @@ class ReviewPage extends Component {
 
     componentWillMount() {
         //fetchMovieSystemConfig.fetchMovieSystemConfig(this.props.type)
-        fetchMovieSystemConfig.fetchMovieSystemConfig("movie")
+        fetchSystemConfig.fetchSystemConfig("movie")
             .then(response => {
                 console.log(response)
                 this.setState({
@@ -59,7 +59,7 @@ class ReviewPage extends Component {
                     hasRestaurantRecommendation: response.hasRestaurantRecommendation,
                     hasTouristicRecommendation: response.hasTouristicRecommendation,
                     hasThemeRecommendation: response.hasThemeRecommendation,
-                    type: response.type,
+                    //type: response.type,
                 })
                 // console.log(this.hasCastInfo)
                 // console.log(this.hasTrailer)
