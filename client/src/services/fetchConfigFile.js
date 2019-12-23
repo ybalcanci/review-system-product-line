@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const CONFIG_API_URL = "http://139.179.103.162:8080/";
+const CONFIG_API_URL = "http://localhost:8080/";
 
 const fetchSystemConfig = (type) =>
 {

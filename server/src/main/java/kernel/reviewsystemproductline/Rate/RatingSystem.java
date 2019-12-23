@@ -11,8 +11,9 @@ public class RatingSystem {
 
         ratingFactory = new RatingFactory();
         ratingFactory.getRating("deliveryTime", type);
-        //ratingFactory.getRating("parkingService", type); // TODO Demo Case
-        ratingFactory.getRating("castAndCrew", type);
+        ratingFactory.getRating("parkingService", type); // TODO Demo Case
+        ratingFactory.getRating("waiters", type); // TODO Demo Case
+        //ratingFactory.getRating("castAndCrew", type);
 
 
 
@@ -56,7 +57,7 @@ public class RatingSystem {
     }
 
     public void rateOverall() {
-        // TODO
+
     }
 
 }

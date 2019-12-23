@@ -42,7 +42,7 @@ public class Explore {
         System.out.println("explore system is created");
 
         // Create Search And Filter System
-        // searchAndFilterSys = SearchAndFilterSystem;  // TODO
+        // searchAndFilterSys = SearchAndFilterSystem;
 
         // If specified, create Recommendation System
         try {

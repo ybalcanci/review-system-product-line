@@ -21,14 +21,15 @@ public class ReviewSystem {
 
 		switch (type){
 			case "hotel":
-				this.informationSystem = new RoomPrice(new FAQ(new HotelInfo()));
+				this.informationSystem = new HotelInfo();
+				//this.informationSystem = new Contact(new RoomPrice(new FAQ(new HotelInfo()))); //TODO DemoCase
 				break;
 			case "movie":
 				this.informationSystem = new MovieInfo();
-				//this.informationSystem = new Cast(new FAQ(new Trailer(new MovieInfo()))); // TODO Demo Case
+				//this.informationSystem = new Cast(new FAQ(new Trailer(new MovieInfo())));
 				break;
 			case "restaurant":
-				//this.informationSystem = new RestaurantInfo(); // TODO Demo Case
+				//this.informationSystem = new RestaurantInfo();
 				this.informationSystem = new Contact(new RestaurantInfo());
 				break;
 		}
