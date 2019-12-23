@@ -3,8 +3,8 @@ package kernel.reviewsystemproductline.info;
 public class RoomPrice extends InfoDecorator {
 	private InformationSystem informationSystem;
 
-	public RoomPrice(InformationSystem ınformationSystem) {
-		this.informationSystem = ınformationSystem;
+	public RoomPrice(InformationSystem informationSystem) {
+		this.informationSystem = informationSystem;
 	}
 
 	@Override
