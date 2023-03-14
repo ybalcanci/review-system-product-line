@@ -12,7 +12,7 @@
     "axios": "^0.21.1",
     "material-ui-rating": "^4.2.0",
     "react": "^16.12.0",
-    "react-scripts": "3.3.0",
+    "react-scripts": "5.0.1",
     "react-dom": "^16.12.0",
     "react-render-as": "0.1.1",
     "popper.js": "1.16.0",
